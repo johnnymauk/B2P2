@@ -1,0 +1,10 @@
+<nav>
+  <div class="nav-wrapper grey lighten-2">
+    <img class="brand-logo logo center" src="../../assets/b2p2logo.png" alt="B2P2" height="64">
+    <ul id="nav-mobile" class="right">
+      <li *ngIf="auth.isAuthenticated()"><a routerLink="logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>

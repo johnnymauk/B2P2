@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: gray;
+}
+
+.b2p2red {
+  background-color: #8A0303;
+}
+
+.b2p2white {
+  background-color: white;
+}
+
+button.b2p2red {
+  color: white;
+  border: white 1px solid;
+}
+
+button.b2p2white {
+  color: #8A0303;
+  border: #8A0303 1px solid;
+}
+
+button.b2p2red:hover {
+  background-color: white;
+  color: #8A0303;
+  border: #8A0303 1px solid;
+}
+
+button.b2p2white:hover {
+  background-color: #8A0303;
+  color: white;
+  border: white 1px solid;
+}
+
+button.b2p2red-border {
+  border: #8A0303;
+}
+
+button.b2p2white-border {
+  border: white;
+}
+
+
+
+.b2p2red-text {
+  color: #8A0303;
+}
+
+nav ul a {
+  color: black;
+}
+
+nav ul a:hover {
+  background-color: #8A0303;
+  color: white;
+}
+
+.datepicker-date-display {
+  background-color: #8A0303;
+}
+
+.datepicker-table td.is-today, .datepicker-done, .datepicker-cancel{
+  color: #8A0303;
+}
+
+.datepicker-table td.is-selected{
+  background-color: #8A0303;
+  color: white;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #8A0303;
+}
+
+.timepicker-digital-display {
+  background-color: #8A0303;
+}
+
+.timepicker-canvas line {
+  stroke: #8A0303;
+}
+
+.timepicker-canvas-bg, .timepicker-canvas-bearing {
+  fill: #8A0303;
+}
+
+.timepicker-close, .timepicker-done {
+  color: #8A0303;
+}
+
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=text]:not(.browser-default) {
+  border-bottom: 1px solid white;
+}
+
+.input-field>label {
+  color: white;
+}
+

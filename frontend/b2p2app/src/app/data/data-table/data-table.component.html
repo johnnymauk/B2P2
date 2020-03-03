@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card b2p2red">
+      <div class="card-content white-text">
+        <table>
+          <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Pressure</th>
+            <th>Pulse</th>
+            <!--<th>Edit</th>-->
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let bp of data" (click)="editEntry(bp.id)">
+            <td>{{bp.date}}</td>
+            <td>{{bp.time}}</td>
+            <td>{{bp.systolic}} / {{bp.diastolic}}</td>
+            <td>{{ bp.pulse }}</td>
+            <!--<td><button class=" btn b2p2white" ">Edit</button></td>-->
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

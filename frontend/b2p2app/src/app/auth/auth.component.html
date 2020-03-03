@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col s12 m8 l4 offset-m2 offset-l4">
+    <div class="card b2p2red">
+      <form #authForm="ngForm">
+
+        <div class="card-content">
+
+          <div class="row" [hidden]="isLogin">
+            <div class="input-field col s12">
+              <input id="name" type="text" class="validate white-text" required ngModel name="name" #name="ngModel">
+              <label for="name">Name</label>
+              <p class="red-text" *ngIf="name.touched && !name.valid">Please enter a name!</p>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate white-text" required email ngModel name="email" #email="ngModel">
+              <label for="email">Email</label>
+              <p class="red-text" *ngIf="email.touched && !email.valid">Please enter a valid email!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                id="password"
+                type="password"
+                class="validate white-text"
+                required
+                ngModel
+                name="password"
+                minlength="6"
+                #password="ngModel"
+              >
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row" [hidden]="isLogin">
+            <div class="input-field col s12">
+              <input
+                id="passwordconfirm"
+                type="password"
+                class="validate white-text"
+                required
+                ngModel
+                name="passwordconfirm"
+                minlength="6"
+                #passwordconfirm="ngModel">
+              <label for="passwordconfirm">Confirm Password</label>
+              <p class="red-text" *ngIf="!isLogin && password.touched && passwordconfirm.touched && password.value!=passwordconfirm.value">Passwords must match!</p>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="errorOccured">
+            <div class="input-field col s12">
+              <p class="red-text">Error: Username/Password does not match records!</p>
+            </div>
+          </div>
+
+          <div class="row center">
+            <button *ngIf="isLogin" class="btn b2p2white " type="button" [disabled]="!email.valid && !password.valid" (click)="onLogin(authForm)">Login</button>
+            <button *ngIf="!isLogin" class="btn b2p2white" type="button" [disabled]="!authForm.valid" (click)="onCreate(authForm)">Create Account</button>
+          </div>
+        </div>
+        <div class="card-action">
+          <a [hidden]="!isLogin" (click)="isLogin = !isLogin" style="cursor: pointer">Don't have an account? Click here!</a>
+          <a [hidden]="isLogin" (click)="isLogin = !isLogin" style="cursor: pointer">Already a member? Click here!</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col s12 m8 l4 offset-m2 offset-l4">
+    <div class="card b2p2red">
+      <form #dataUpdateForm="ngForm">
+
+        <div class="card-content">
+
+          <div class="row">
+            <h4 class="white-text center">Update Entry</h4>
+          </div>
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="systolic" type="number" class="validate white-text valid" required ngModel name="systolic" #systolic="ngModel" min="1" max="400">
+              <label class="active" for="systolic">Systolic Pressure(mmHg)</label>
+              <p class="red-text" *ngIf="systolic.touched && !systolic.valid">Please enter a valid systolic pressure!</p>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="diastolic" type="number" class="validate white-text valid" required ngModel name="diastolic" #diastolic="ngModel" min="1" max="400">
+              <label class="active" for="diastolic">Diastolic Pressure (mmHg)</label>
+              <p class="red-text" *ngIf="diastolic.touched && !diastolic.valid">Please enter a valid diastolic pressure!</p>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="bpm" type="number" class="validate white-text valid" required ngModel name="bpm" #bpm="ngModel" min="1" max="400">
+              <label class="active" for="bpm">BPM</label>
+              <p class="red-text" *ngIf="bpm.touched && !bpm.valid">Please enter a valid bpm!</p>
+            </div>
+          </div>
+
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="datepicker" type="text" class="validate white-text valid" required ngModel name="datepicker" #datepicker #dateElement="ngModel">
+              <label class="active" for="datepicker">Select Date</label>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="timepicker" type="text" class="validate white-text valid" required ngModel name="timepicker" #timepicker #timeElement="ngModel">
+              <label class="active" for="timepicker">Select Time</label>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="input-field col s12">
+              <input id="note" type="text" class="validate white-text valid" required ngModel name="note" #note="ngModel" maxlength="60">
+              <label class="active" for="note">Notes</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-action center">
+          <div class="row">
+            <div class="col s6">
+              <button class="btn b2p2white" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+            <div class="col s6">
+              <button
+                class="btn b2p2white"
+                type="button"
+                [disabled]="!systolic.valid && !diastolic.valid && !bpm.valid && dateElement.value=='' && timeElement.value==''"
+                (click)="onUpdate(dataUpdateForm)"
+              >Update Entry</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
