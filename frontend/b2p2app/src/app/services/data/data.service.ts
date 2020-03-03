@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {TokenModel} from "../../models/token.model";
 import {UrlService} from "../url/url.service";
 import {AuthService} from "../auth/auth.service";
 import {DataModel} from "../../models/data.model";
